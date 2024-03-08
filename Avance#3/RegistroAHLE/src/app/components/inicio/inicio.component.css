@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente bonita */
+  background-color: white; /* Fondo blanco */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.image-container {
+  background-image: url('images/fondo.jpg');
+  background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+  background-position: center;
+  padding: 200px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.buttons-top {
+  margin-top: 20px;
+}
+
+.buttons-bottom {
+  margin-top: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 15px 30px; /* Ajusta el tamaño de los botones */
+  background-color: rgba(82, 194, 82, 0.7); /* Verde con transparencia */
+  color: rgb(255, 255, 255); /* Color del texto */
+  border: none;
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+  cursor: pointer;
+  font-size: 18px; /* Tamaño de la fuente */
+  transition: background-color 0.3s; /* Transición para el cambio de color al pasar el cursor */
+}
+
+
+
+
+
+
+h1 {
+  margin-top: -50px; /* Ajusta la posición vertical del título */
+  color: white; /* Color blanco */
+  font-size: 36px; /* Tamaño de la fuente */
+}
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  width: 100px; /* Ancho de la imagen (ajusta según sea necesario) */
+  height: auto; /* Altura automática para mantener la proporción */
+}
+
+.registro-title {
+  margin-left: 20px; /* Espacio desde el logo */
+  font-size: 24px; /* Tamaño del título (ajusta según sea necesario) */
+  flex-grow: 1; /* Permite que el título "Registro" ocupe el espacio restante */
+  text-align: center; /* Centra el texto */
+  color: black;
+}
+
+.image-container {
+  text-align: center; /* Centrar el contenido del contenedor de la imagen */
+}
+

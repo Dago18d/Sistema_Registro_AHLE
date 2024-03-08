@@ -1,0 +1,64 @@
+<p routerLink="/tabla">tabla</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Estilo</title>
+    <link rel="stylesheet" href="historial-a.component.css"> <!-- Aquí se vincula el archivo CSS -->
+</head>
+<div class="container mt-5">
+  <div class="col-lg-6 offset-lg-3">
+    <div class="card">
+      <div class="card-body text-center">
+        <span class="title">{{ title  }}</span>
+        <div class="imagen"></div>
+        <form class="mt-3" [formGroup]="historialForm" (ngSubmit)="addRegistro()">
+          <div class="mb-3">
+            <input type="text" formControlName="nivelEducativo" class="form-control form-control-lg" placeholder="Registro nivel educativo">
+            <div class="text-danger"
+              *ngIf="historialForm.get('nivelEducativo')?.hasError('required') && historialForm.get('nivelEducativo')?.touched">
+              <span>El nivel educativo es requerido</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <input type="text" formControlName="ultimoGradoEscolar" class="form-control form-control-lg" placeholder="registro ultimo grado escolar ">
+            <div class="text-danger"
+              *ngIf="historialForm.get('ultimoGradoEscolar')?.hasError('required') && historialForm.get('ultimoGradoEscolar')?.touched">
+              <span>El ultimo grado escolar es requerido</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <input type="text" formControlName="institucionAnterior" class="form-control form-control-lg" placeholder="registrar Intitucion Anterior">
+            <div class="text-danger"
+              *ngIf="historialForm.get('institucionAnterior')?.hasError('required') && historialForm.get('institucionAnterior')?.touched">
+              <span>El Institucion Anterior es requerido</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <input type="text" formControlName="AreaInteres" class="form-control form-control-lg" placeholder="Registra Area de Interes">
+            <div class="text-danger"
+              *ngIf="historialForm.get('AreaInteres')?.hasError('required') && historialForm.get('AreaInteres')?.touched">
+              <span>El area de interes es requerida</span>
+            </div>
+          </div>
+
+
+          <div class="mb-3">
+
+            <button routerLink="/" class="btn btn-secondary btn-lg float-start">Inicio</button>
+            <button type="submit" [disabled]="productForm.invalid"
+              class="btn btn-success btn-lg float-end">Registrar Datos</button>
+
+          </div>
+
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

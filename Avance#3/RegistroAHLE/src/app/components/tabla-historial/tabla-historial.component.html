@@ -1,0 +1,40 @@
+<p>tabla-historial works!</p>
+<p>tabla works!</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card">
+        <div class="card-body text-center">
+          <span class="title">Tabla de Registros</span>
+          <button class="btn btn-success float-end" routerLink="/historial">Generar Registro</button>
+          <table *ngIf="tablaHistorial.length > 0" class="table table-striped table-responsive mt-5">
+            <thead>
+              <tr>
+                <th scope="col">Nivel educativo</th>
+                  <th scope="col">Ultimo grado escolar</th>
+                  <th scope="col">InstitutoAnterior</th>
+                  <th scope="col">Area de interes</th>
+                  <th scope="col">Acciones</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let historial of tablaHistorial">
+                <td>{{ historial.nivelEducativo}}</td>
+                <td>{{ historial.ultimoGradoEscolar }}</td>
+                <td>{{ historial.institucionAnterior }}</td>
+                <td>{{ historial.AreaInteres }}</td>
+
+                <td>
+                  <i [routerLink]="['/edit-historial', historial._id]" class="fas fa-edit text-primary"></i>
+                  <i (click)="deleteHistorial(historial._id)" class="fas fa-trash text-danger"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <h5 class="no-available" *ngIf="tablaHistorial.length == 0">There are no products available</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
